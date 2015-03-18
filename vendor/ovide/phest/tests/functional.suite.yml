@@ -1,0 +1,11 @@
+class_name: FunctionalTester
+modules:
+    enabled:
+        - FunctionalHelper
+        - Phalcon1
+        - REST
+    config:
+        Phalcon1:
+            bootstrap: 'tests/functional/_bootstrap.php'
+            cleanup: false
+            savepoints: false

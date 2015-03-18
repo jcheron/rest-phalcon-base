@@ -1,0 +1,11 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ovide/phest.git"
+        }
+    ],
+    "require": {
+        "ovide/phest": "dev-master"
+    }
+}

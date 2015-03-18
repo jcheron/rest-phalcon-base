@@ -1,0 +1,15 @@
+namespace: Ovide\Libs\Mvc
+actor: Tester
+paths:
+    tests: tests
+    data: tests
+    log: tests/_output
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+coverage:
+    enabled: true
+    include:
+        - src/*

@@ -1,0 +1,46 @@
+[
+    {
+        "name": "ovide/phest",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ovide/phest.git",
+            "reference": "c6c3565dde366a2cd71e71f3ad5e7f6065e513c4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ovide/phest/zipball/c6c3565dde366a2cd71e71f3ad5e7f6065e513c4",
+            "reference": "c6c3565dde366a2cd71e71f3ad5e7f6065e513c4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "codeception/codeception": "<2.1",
+            "digitronac/phalcon-ide-stubs": "1.3",
+            "fabpot/php-cs-fixer": "1.0.*@dev",
+            "mockery/mockery": "<1.0"
+        },
+        "time": "2015-02-24 18:46:36",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ovide\\Libs\\Mvc\\Rest\\": "src/"
+            }
+        },
+        "authors": [
+            {
+                "name": "Albert Ovide",
+                "email": "albert@ovide.net"
+            }
+        ],
+        "description": "Rest controller",
+        "support": {
+            "source": "https://github.com/ovide/phest/tree/master",
+            "issues": "https://github.com/ovide/phest/issues"
+        }
+    }
+]
