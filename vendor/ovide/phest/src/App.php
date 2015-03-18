@@ -85,7 +85,7 @@ class App extends Micro
      * @see addResource()
      * @param array $resources resource class Names
      */
-    public function addResources(array $resources)
+    public function addResources($resources)
     {
         /* @var $di \Phalcon\DI */
         $di    = $this->_dependencyInjector;
