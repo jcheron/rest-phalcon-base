@@ -19,29 +19,31 @@ Controllers must inherit from `\MainRestController` and implement :
 
 ```php
 class Contents extends \MainRestController {
+	/**
+	* Return the model class for this controller
+	* Ex : return ModelExample::class
+	*/
 	protected function getModelClass() {
 		return Content::class;
 	}
 
-
-	/* (non-PHPdoc)
-	 * @see MainRestController::getOneCriteria()
+	/**
+	 * Defines the primary key or the SQL condition to select a single record
+	 * @param string $id
+	 * @return string
 	 */
 	protected function getOneCriteria($id) {
-		$keys=explode("-", $id);
-		return "key='{$keys[0]}' AND lang='{$keys[1]}'";
+		return "key=".$id;
 	}
 
 	/**
-	 * @var Content
-	 * @var mixed
-	 * @see MainRestController::copyFrom()
+	 * Define the copy from the object posted ($from) to the model object ($to)
+	 * @param object $to
+	 * @param object $from
 	 */
 	protected function copyFrom($to, $from) {
 		$to->setKey($from["key"]);
-		$to->setLang($from["lang"]);
 		$to->setTitle($from["title"]);
-		$to->setValue($from["value"]);
 	}
 }
 ```
