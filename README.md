@@ -67,3 +67,10 @@ return new \Phalcon\Config(array(
 | POST       | /foos         | Adds an instance of Foo using posted data |
 | PUT        | /foos/12      | Updates the instance with id 12 using posted data |
 | DELETE     | /foos/12      | Deletes the instance with id 12 |
+
+##Possible extensions
+
+If each instance of the Bar class has many Foos :
+| Method     | URL           | Response   |
+| ---------- |:------------- | :--------- |
+| GET        | /foos/bar/11  | All instances of `Foo` from the `Bar` instance with id 11 |
