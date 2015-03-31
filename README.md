@@ -6,7 +6,7 @@ Minimalist API Rest based on https://github.com/ovide/phest
 ##Create models in `app/models`
 Plain Old PHP Objects with getters and setters
 ```php
-class ModelExample extends Model {
+class Foo extends Model {
 	private $key;
 	private $title;
 }
@@ -18,13 +18,13 @@ Controllers must inherit from `\MainRestController` and implement :
  * copyFrom($to,$from)
 
 ```php
-class Contents extends \MainRestController {
+class Foos extends \MainRestController {
 	/**
 	* Return the model class for this controller
 	* Ex : return ModelExample::class
 	*/
 	protected function getModelClass() {
-		return Content::class;
+		return Foo::class;
 	}
 
 	/**
@@ -47,3 +47,18 @@ class Contents extends \MainRestController {
 	}
 }
 ```
+##Add resources
+
+In `app/config/config.php` :
+
+```php
+<?php
+return new \Phalcon\Config(array(
+    'rest' => array('resources'=>array(Foos::class))
+));
+```
+
+##Query the server
+
+|Method | URL | Response |
+|GET | /foos | All instances of `Foo` |
