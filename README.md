@@ -60,11 +60,8 @@ return new \Phalcon\Config(array(
 
 ##Query the server
 
-|Method | URL | Response |
-|GET | /foos | All instances of `Foo` |
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
+| Method        | URL           | Response  |
+| ------------- |:-------------:| ---------:|
+| GET           | /foos | All instances of `Foo` |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
