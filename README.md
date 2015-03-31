@@ -60,8 +60,10 @@ return new \Phalcon\Config(array(
 
 ##Query the server
 
-| Method     | URL           | Response  |
-| ---------- |:-------------:| ---------:|
+| Method     | URL           | Response   |
+| ---------- |:------------- | :--------- |
 | GET        | /foos         | All instances of `Foo` |
 | GET        | /foos/12      | The Foo instance with id 12 |
-| POST       | /foos         | Adds the Foo posted |
+| POST       | /foos         | Adds an instance of Foo using posted data |
+| PUT        | /foos/12      | Updates the instance with id 12 using posted data |
+| DELETE     | /foos/12      | Deletes the instance with id 12 |
