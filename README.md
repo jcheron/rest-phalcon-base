@@ -75,3 +75,16 @@ If each instance of the Bar class has many Foos :
 | Method     | URL           | Response   |
 | ---------- |:------------- | :--------- |
 | GET        | /foos/bar/11  | All instances of `Foo` from the `Bar` instance with id 11 |
+
+In this case, we needs to had a method getBar in the Foos controller :
+
+```php
+    public function getBar($id){
+    	$foos=Foo::find("idBar=".$id);
+    	$foos=$foos->toArray();
+    	if(sizeof($food)==0)
+    		throw new NotFound("no Foos found.");
+    	return $foos;
+    }
+ ```
+
