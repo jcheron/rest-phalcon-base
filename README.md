@@ -71,6 +71,7 @@ return new \Phalcon\Config(array(
 ##Possible extensions
 
 If each instance of the Bar class has many Foos :
+
 | Method     | URL           | Response   |
 | ---------- |:------------- | :--------- |
 | GET        | /foos/bar/11  | All instances of `Foo` from the `Bar` instance with id 11 |
