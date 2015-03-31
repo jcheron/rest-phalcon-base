@@ -60,8 +60,8 @@ return new \Phalcon\Config(array(
 
 ##Query the server
 
-| Method        | URL           | Response  |
-| ------------- |:-------------:| ---------:|
-| GET           | /foos | All instances of `Foo` |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Method     | URL           | Response  |
+| ---------- |:-------------:| ---------:|
+| GET        | /foos         | All instances of `Foo` |
+| GET        | /foos/12      | The Foo instance with id 12 |
+| POST       | /foos         | Adds the Foo posted |
