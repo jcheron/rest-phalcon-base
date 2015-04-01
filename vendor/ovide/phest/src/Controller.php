@@ -152,12 +152,24 @@ abstract class Controller extends \Phalcon\Mvc\Controller
             	}
                 break;
             case 'PUT':
-                $this->_curMethod = 'put';
-                $this->_method($id, $params);
+                if(sizeof($params)==1){
+            		$method=array_pop($params);
+            		$this->_curMethod = 'put'.ucfirst($method);
+            		$this->_method($id, $params);
+            	} else {
+	                $this->_curMethod = 'put';
+	                $this->_method(null, $params);
+            	}
                 break;
             case 'DELETE':
-                $this->_curMethod = 'delete';
-                $this->_method($id, $params);
+                if(sizeof($params)==1){
+            		$method=array_pop($params);
+            		$this->_curMethod = 'delete'.ucfirst($method);
+            		$this->_method($id, $params);
+            	} else {
+	                $this->_curMethod = 'delete';
+	                $this->_method(null, $params);
+            	}
                 break;
             case 'OPTIONS':
                 $this->options();
