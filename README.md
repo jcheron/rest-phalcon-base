@@ -94,3 +94,43 @@ In this case, we needs to had a method getBar in the Foos controller :
 | Method     | URL           | Response   |
 | ---------- |:------------- | :--------- |
 | POST        | /foos/bar/new  | Depends of the postBar() method implementation |
+
+In this case, we needs to had a method `postBar`in the `Foos`controller :
+
+```php
+	public function postBar($id,$object){
+		//Our implementation here;
+		//$id is the last url parameter (new in our case)
+		//$object is the posted object
+	}
+```
+
+####Updating
+| Method     | URL           | Response   |
+| ---------- |:------------- | :--------- |
+| PUT        | /foos/bar/11  | Depends of the putBar() method implementation |
+
+In this case, we needs to had a method `putBar`in the `Foos`controller :
+
+```php
+	public function putBar($id,$object){
+		//Our implementation here;
+		//$id is the last url parameter (11 in our case)
+		//$object contains the data send with the put method
+	}
+```
+
+####Deleting
+| Method     | URL           | Response   |
+| ---------- |:------------- | :--------- |
+| DELETE        | /foos/bar/11  | Depends of the deleteBar() method implementation |
+
+In this case, we needs to had a method `deleteBar`in the `Foos`controller :
+
+```php
+	public function deleteBar($id,$object){
+		//Our implementation here;
+		//$id is the last url parameter (11 in our case)
+		//$object contains the data send with the delete method
+	}
+```
