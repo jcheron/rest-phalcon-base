@@ -4,11 +4,27 @@ use Ovide\Libs\Mvc\Rest\Exception\NotFound;
 use Ovide\Libs\Mvc\Rest\Exception\Conflict;
 use Ovide\Libs\Mvc\Rest\Exception\Unauthorized;
 abstract class MainRestController extends Controller {
+	/**
+	 * Return the model class for this controller
+	 * Ex : return ModelExample::class
+	 */
 	protected abstract function getModelClass();
 	protected function getModelCaption(){
 		return $this->getModelClass();
 	}
-
+	/**
+	 * Defines the primary key or the SQL condition to select a single record
+	 * @param string $id
+	 * @return string
+	 */
+	protected function getOneCriteria($id){
+		return $id;
+	}
+	/**
+	 * Define the copy from the object posted ($from) to the model object ($to)
+	 * @param object $to
+	 * @param object $from
+	 */
 	protected abstract function copyFrom($to,$from);
 
 	protected function _isValidToken($token,$force=false){
@@ -44,7 +60,7 @@ abstract class MainRestController extends Controller {
 
 	public function getOne($id){
 		$class=$this->getModelClass();
-		if (!$modelInstance = $class::findFirst($id))
+		if (!$modelInstance = $class::findFirst($this->getOneCriteria($id)))
 			throw new NotFound("Ooops! "+$this->getModelCaption()+" {$id} introuvable");
 		return $modelInstance->toArray();
 	}
