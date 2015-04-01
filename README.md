@@ -70,6 +70,7 @@ return new \Phalcon\Config(array(
 
 ##Possible extensions
 
+###Custom query
 If each instance of the Bar class has many Foos :
 
 | Method     | URL           | Response   |
@@ -88,3 +89,8 @@ In this case, we needs to had a method getBar in the Foos controller :
     }
  ```
 
+###Custom operations
+####Adding
+| Method     | URL           | Response   |
+| ---------- |:------------- | :--------- |
+| POST        | /foos/bar/new  | Depends of the postBar() method implementation |
