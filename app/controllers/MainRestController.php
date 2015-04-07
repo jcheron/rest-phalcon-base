@@ -20,6 +20,25 @@ abstract class MainRestController extends Controller {
 	protected function getOneCriteria($id){
 		return $id;
 	}
+
+
+	/**
+	 * Defines the primary key or the SQL condition to update a single record
+	 * @param string $id
+	 * @return string
+	 */
+	protected function getPutCriteria($id){
+		return $id;
+	}
+
+	/**
+	 * Defines the primary key or the SQL condition to delete a single record
+	 * @param string $id
+	 * @return string
+	 */
+	protected function getDeleteCriteria($id){
+		return $id;
+	}
 	/**
 	 * Define the copy from the object posted ($from) to the model object ($to)
 	 * @param object $to
@@ -83,7 +102,7 @@ abstract class MainRestController extends Controller {
 	public function put($id, $obj){
 		$class=$this->getModelClass();
 		if($this->_isValidToken($this->request->get("token"),$this->request->get("force"))){
-			$modelInstance = $class::findFirst($id);
+			$modelInstance = $class::findFirst($this->getPutCriteria($id));
 			if(!$modelInstance){
 				throw new NotFound("Mise à jour : '".$obj["name"]."' n'existe plus dans la base de données.");
 				return array();
@@ -105,7 +124,7 @@ abstract class MainRestController extends Controller {
 	public function delete($id){
 		$class=$this->getModelClass();
 		if($this->_isValidToken($this->request->get("token"),$this->request->get("force"))){
-			$modelInstance = $class::findFirst($id);
+			$modelInstance = $class::findFirst($this->getDeleteCriteria($id));
 			if(!$modelInstance){
 				return array("message"=>$this->warningMessage("Mise à jour : L'instance d'id '".$id."' n'existe plus dans la base de données."),"code"=>Response::UNAVAILABLE);
 			}else{
