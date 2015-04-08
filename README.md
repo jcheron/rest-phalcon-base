@@ -134,3 +134,16 @@ In this case, we needs to had a method `deleteBar`in the `Foos`controller :
 		//$object contains the data send with the delete method
 	}
 ```
+
+###Key personalization
+
+For the composite primary keys, it is necessary to override some methods in the controller :
+
+Example :
+
+```php
+	protected function getOneCriteria($id) {
+		$keys=explode("-", $id);
+		return "idFoo='{$keys[0]}' AND idBar='{$keys[1]}'";
+	}
+```
