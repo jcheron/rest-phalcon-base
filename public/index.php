@@ -52,7 +52,7 @@ $app->di->setShared('session', function() {
 	$session->start();
 	return $session;
 });
-$app->addResources($config->resources);
+$app->addResources($config->rest->resources);
 
 $app->get("/user/check/{login}/{password}", array(new UsersController(),"checkConnectionAction"));
 $app->get("/user/check", array(new UsersController(),"checkConnectedAction"));

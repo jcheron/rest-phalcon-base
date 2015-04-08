@@ -58,8 +58,8 @@ abstract class Controller extends \Phalcon\Mvc\Controller
 
     public function onConstruct()
     {
-        $this->_eventsManager = $this->di->getEventsManager();
-        $this->_eventsManager->attach(static::class, $this);
+        $this->_eventsManager=$this->di->get('eventsManager');
+    	$this->_eventsManager->attach(static::class, $this);
     }
 
     /**
